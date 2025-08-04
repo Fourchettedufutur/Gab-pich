@@ -17,7 +17,6 @@
       padding: 0;
       height: 100%;
       font-family: 'Freckle Face', cursive;
-      background: #000;
     }
 
     .container {
@@ -26,8 +25,8 @@
       height: 100vh;
       background: url("Gabz.jpg") no-repeat center center;
       background-size: contain;
+      background-color: #000;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -35,9 +34,11 @@
     }
 
     .text-content {
+      position: relative;
       z-index: 1;
       padding: 20px;
       max-width: 90%;
+      margin: 0 auto;
     }
 
     .text-content h1 {
@@ -53,9 +54,11 @@
     }
 
     .audio-controls {
-      margin-top: auto;
-      margin-bottom: 20px;
+      position: absolute;
+      bottom: 8%;
       z-index: 2;
+      width: 100%;
+      text-align: center;
     }
 
     .audio-controls button {
@@ -70,10 +73,10 @@
 
     @media (max-width: 600px) {
       .text-content h1 {
-        font-size: 1.4em;
+        font-size: 1.5em; /* légèrement augmenté */
       }
       #countdown {
-        font-size: 1.3em;
+        font-size: 1.4em; /* légèrement augmenté */
       }
     }
   </style>
