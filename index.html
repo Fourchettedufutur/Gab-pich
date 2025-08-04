@@ -17,6 +17,7 @@
       padding: 0;
       height: 100%;
       font-family: 'Freckle Face', cursive;
+      background: #000;
     }
 
     .container {
@@ -25,21 +26,18 @@
       height: 100vh;
       background: url("Gabz.jpg") no-repeat center center;
       background-size: contain;
-      background-color: #000;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
-      overflow: hidden;
     }
 
     .text-content {
       z-index: 1;
       padding: 20px;
       max-width: 90%;
-      margin: 0 auto;
     }
 
     .text-content h1 {
@@ -55,11 +53,9 @@
     }
 
     .audio-controls {
-      position: absolute;
-      bottom: 20px;
+      margin-top: auto;
+      margin-bottom: 20px;
       z-index: 2;
-      width: 100%;
-      text-align: center;
     }
 
     .audio-controls button {
@@ -74,7 +70,7 @@
 
     @media (max-width: 600px) {
       .text-content h1 {
-        font-size: 1.4em; /* ↑ police un peu plus grande sur mobile */
+        font-size: 1.4em;
       }
       #countdown {
         font-size: 1.3em;
@@ -93,7 +89,6 @@
       <button onclick="document.getElementById('music').play()">🎵 Lancer la musique</button>
     </div>
 
-    <!-- Fichier musique à ajouter dans ton dépôt -->
     <audio id="music" src="musique.mp3" type="audio/mp3"></audio>
   </div>
 
@@ -101,4 +96,25 @@
     const eventDate = new Date("2026-07-19T14:00:00").getTime();
 
     function updateCountdown() {
-      const now = new Date
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "C'est l'heure du pichet ! 🍻";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${days}j ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
