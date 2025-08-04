@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Gabin - Compte à rebours</title>
+
+  <!-- Google Font : Lobster -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -12,7 +16,7 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: 'Lobster', cursive;
     }
 
     .container {
@@ -21,12 +25,12 @@
       height: 100vh;
       background: url("Gabz.jpg") no-repeat center center;
       background-size: contain;
-      background-color: #000; /* fond noir autour de l’image si elle ne remplit pas tout */
+      background-color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: white;
+      color: black;
     }
 
     .text-content {
@@ -38,13 +42,28 @@
     .text-content h1 {
       font-size: 1.4em;
       margin-bottom: 15px;
-      text-shadow: 0 0 2px black; /* léger contour pour lisibilité */
     }
 
     #countdown {
       font-size: 1.8em;
       font-weight: bold;
-      text-shadow: 0 0 2px black;
+    }
+
+    .audio-controls {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .audio-controls button {
+      font-family: 'Lobster', cursive;
+      font-size: 1em;
+      padding: 8px 20px;
+      border: none;
+      background-color: #ffcc00;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
     @media (max-width: 600px) {
@@ -63,6 +82,13 @@
       <h1>Temps restant avant que Gabin paye son pichet :</h1>
       <div id="countdown"></div>
     </div>
+
+    <div class="audio-controls">
+      <button onclick="document.getElementById('music').play()">🎵 Lancer la musique</button>
+    </div>
+
+    <!-- Musique (change le fichier si tu veux) -->
+    <audio id="music" src="musique.mp3" type="audio/mp3"></audio>
   </div>
 
   <script>
