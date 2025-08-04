@@ -2,37 +2,70 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Compte à rebours - Gabin</title>
+  <title>Gabin - Compte à rebours</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url("Gabz.jpg") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 30px;
+      color: white;
     }
-    h1 {
-      font-size: 1.8em;
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0,0.5); /* assombrit un peu l’image */
+    }
+    .text-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+    .text-content h1 {
+      font-size: 2em;
       margin-bottom: 20px;
-    }
-    img {
-      max-width: 90%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-shadow: 1px 1px 3px black;
     }
     #countdown {
-      font-size: 2em;
-      margin-top: 20px;
-      color: #333;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    @media (max-width: 600px) {
+      .text-content h1 {
+        font-size: 1.3em;
+      }
+      #countdown {
+        font-size: 1.8em;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Temps restant avant que Gabin paye son pichet :</h1>
-
-  <img src="Gabz.jpg" alt="Gabin">
-
-  <div id="countdown"></div>
+  <div class="container">
+    <div class="overlay"></div>
+    <div class="text-content">
+      <h1>Temps restant avant que Gabin paye son pichet :</h1>
+      <div id="countdown"></div>
+    </div>
+  </div>
 
   <script>
     const eventDate = new Date("2026-07-19T14:00:00").getTime();
@@ -42,7 +75,7 @@
       const distance = eventDate - now;
 
       if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "Il est temps que Gabin paye son pichet ! 🍻";
+        document.getElementById("countdown").innerHTML = "C'est l'heure du pichet ! 🍻";
         return;
       }
 
@@ -52,7 +85,7 @@
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       document.getElementById("countdown").innerHTML =
-        `${days} jours ${hours}h ${minutes}m ${seconds}s`;
+        `${days}j ${hours}h ${minutes}m ${seconds}s`;
     }
 
     setInterval(updateCountdown, 1000);
