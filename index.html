@@ -37,16 +37,18 @@
       position: relative;
       z-index: 1;
       padding: 20px;
+      max-width: 90%;
+      margin: 0 auto;
     }
 
     .text-content h1 {
-      font-size: 1.4em;
-      margin-bottom: 15px;
+      font-size: 2.4em;
+      margin-bottom: 20px;
       text-shadow: 1px 1px 3px #000;
     }
 
     #countdown {
-      font-size: 1.8em;
+      font-size: 2.2em;
       font-weight: bold;
       text-shadow: 1px 1px 3px #000;
     }
@@ -60,20 +62,20 @@
 
     .audio-controls button {
       font-family: 'Freckle Face', cursive;
-      font-size: 1em;
-      padding: 8px 20px;
+      font-size: 1.2em;
+      padding: 10px 24px;
       border: none;
       background-color: #ffcc00;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
     }
 
     @media (max-width: 600px) {
       .text-content h1 {
-        font-size: 1.1em;
+        font-size: 1.5em;
       }
       #countdown {
-        font-size: 1.5em;
+        font-size: 1.4em;
       }
     }
   </style>
@@ -89,7 +91,7 @@
       <button onclick="document.getElementById('music').play()">🎵 Lancer la musique</button>
     </div>
 
-    <!-- Musique (à remplacer par ton fichier) -->
+    <!-- Musique (à remplacer si tu veux) -->
     <audio id="music" src="musique.mp3" type="audio/mp3"></audio>
   </div>
 
