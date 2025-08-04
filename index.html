@@ -42,13 +42,13 @@
     }
 
     .text-content h1 {
-      font-size: 2.4em;
+      font-size: 1.7em; /* réduit de ~30% */
       margin-bottom: 20px;
       text-shadow: 1px 1px 3px #000;
     }
 
     #countdown {
-      font-size: 2.2em;
+      font-size: 1.5em; /* réduit aussi */
       font-weight: bold;
       text-shadow: 1px 1px 3px #000;
     }
@@ -72,10 +72,10 @@
 
     @media (max-width: 600px) {
       .text-content h1 {
-        font-size: 1.5em;
+        font-size: 1.2em;
       }
       #countdown {
-        font-size: 1.4em;
+        font-size: 1.1em;
       }
     }
   </style>
@@ -91,7 +91,6 @@
       <button onclick="document.getElementById('music').play()">🎵 Lancer la musique</button>
     </div>
 
-    <!-- Musique (à remplacer si tu veux) -->
     <audio id="music" src="musique.mp3" type="audio/mp3"></audio>
   </div>
 
