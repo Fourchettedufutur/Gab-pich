@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Gabin - Compte à rebours</title>
 
-  <!-- Google Font : Lobster -->
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <!-- Google Font : Freckle Face -->
+  <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -16,7 +16,7 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: 'Lobster', cursive;
+      font-family: 'Freckle Face', cursive;
     }
 
     .container {
@@ -25,12 +25,12 @@
       height: 100vh;
       background: url("Gabz.jpg") no-repeat center center;
       background-size: contain;
-      background-color: #fff;
+      background-color: #000;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: black;
+      color: white;
     }
 
     .text-content {
@@ -42,11 +42,13 @@
     .text-content h1 {
       font-size: 1.4em;
       margin-bottom: 15px;
+      text-shadow: 1px 1px 3px #000;
     }
 
     #countdown {
       font-size: 1.8em;
       font-weight: bold;
+      text-shadow: 1px 1px 3px #000;
     }
 
     .audio-controls {
@@ -57,7 +59,7 @@
     }
 
     .audio-controls button {
-      font-family: 'Lobster', cursive;
+      font-family: 'Freckle Face', cursive;
       font-size: 1em;
       padding: 8px 20px;
       border: none;
@@ -87,7 +89,7 @@
       <button onclick="document.getElementById('music').play()">🎵 Lancer la musique</button>
     </div>
 
-    <!-- Musique (change le fichier si tu veux) -->
+    <!-- Musique (à remplacer par ton fichier) -->
     <audio id="music" src="musique.mp3" type="audio/mp3"></audio>
   </div>
 
